@@ -8,20 +8,6 @@ from tqdm import tqdm
 from audio_utils.audio import get_min_value, ms_to_samples
 
 
-def get_dBFS(wav: np.ndarray, max_value: float) -> float:
-  value = np.sqrt(np.mean((wav / max_value)**2))
-  if value == 0:
-    return -inf
-
-  result = 20 * log10(value)
-  return result
-
-
-def get_duration_s(samples: int, sampling_rate: int) -> float:
-  duration = samples / sampling_rate
-  return duration
-
-
 @dataclass
 class Chunk:
   size: int

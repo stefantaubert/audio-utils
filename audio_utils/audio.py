@@ -290,7 +290,11 @@ def stereo_to_mono_file(origin: str, dest: str) -> None:
 
 
 def get_duration_s(wav, sampling_rate) -> float:
-  duration = len(wav) / sampling_rate
+  return get_duration_s_samples(len(wav), sampling_rate)
+
+
+def get_duration_s_samples(samples: int, sampling_rate: int) -> float:
+  duration = samples / sampling_rate
   return duration
 
 
