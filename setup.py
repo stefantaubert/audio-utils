@@ -11,10 +11,10 @@ setup(
     install_requires=[
         "llvmlite==0.34.0; python_version >= '3.6'",
         "numba==0.51.2; python_version >= '3.6'",
-        "numpy==1.19.4",
+        "numpy==1.19.5",
         "resampy==0.2.2",
         "scipy==1.6.0",
         "six==1.15.0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
-        "tqdm==4.56.0",
+        "tqdm==4.55.0",
     ],
 )
