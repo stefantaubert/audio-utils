@@ -15,6 +15,7 @@ rope = "*"
 scipy = "*"
 numpy = "*"
 resampy = "*"
+tqdm = "*"
 
 [requires]
 python_version = "3.8"
