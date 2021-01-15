@@ -18,8 +18,8 @@ Support for: INT32, INT32, FLOAT32 and FLOAT64 wavs
 Checkout this repository:
 
 ```sh
-git clone https://github.com/stefantaubert/text-utils.git
-cd textgrid-ipa
+git clone https://github.com/stefantaubert/audio-utils.git
+cd audio-utils
 python3.8 -m pip install pipenv
 python3.8 -m pipenv install --dev
 ```
@@ -32,7 +32,7 @@ In the destination project run:
 # if not already done:
 pip install --user pipenv --python 3.8
 # add reference
-pipenv install -e git+https://github.com/stefantaubert/text-utils.git@master#egg=text_utils
+pipenv install -e git+https://github.com/stefantaubert/audio-utils.git@master#egg=audio_utils
 ```
 
 ## Dev
