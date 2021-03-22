@@ -16,6 +16,10 @@ scipy = "*"
 numpy = "*"
 resampy = "*"
 tqdm = "*"
+torch = "==1.7.1"
+matplotlib = "*"
+librosa = "*"
+
 
 [requires]
 python_version = "3.8"

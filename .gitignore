@@ -133,3 +133,4 @@ playground*
 
 # Example files
 example*
+*.debug.py
