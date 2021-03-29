@@ -174,7 +174,8 @@ def concatenate_audios(audios: List[np.ndarray], sentence_pause_s: float, sampli
 def concatenate_audios_core(audios: List[np.ndarray], sentence_pause_samples_count: int = 0) -> np.ndarray:
   """Concatenates the np.ndarray list on the last axis."""
   if len(audios) == 1:
-    return audios[0]
+    cpy = np.array(audios[0])
+    return cpy
 
   pause_shape = list(audios[0].shape)
   pause_shape[-1] = sentence_pause_samples_count
