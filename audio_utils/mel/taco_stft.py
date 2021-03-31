@@ -91,8 +91,9 @@ class TacotronSTFT(torch.nn.Module):  # todo rename to Mel
     -------
     mel_output: torch.FloatTensor of shape (B, n_mel_channels, T)
     """
-    assert(torch.min(y.data) >= FLOAT32_64_MIN_WAV)
-    assert(torch.max(y.data) <= FLOAT32_64_MAX_WAV)
+    input_is_not_overamplified = torch.min(
+      y.data) >= FLOAT32_64_MIN_WAV and torch.max(y.data) <= FLOAT32_64_MAX_WAV
+    assert input_is_not_overamplified
 
     magnitudes, phases = self.stft_fn.transform(y)
     magnitudes = magnitudes.data
