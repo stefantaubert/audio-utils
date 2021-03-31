@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from logging import Logger
 
 import torch
+from audio_utils.audio import FLOAT32_64_MAX_WAV, FLOAT32_64_MIN_WAV
 from audio_utils.mel.main import wav_to_float32_tensor
 from audio_utils.mel.stft import STFT
 from librosa.filters import mel as librosa_mel_fn
@@ -90,8 +91,8 @@ class TacotronSTFT(torch.nn.Module):  # todo rename to Mel
     -------
     mel_output: torch.FloatTensor of shape (B, n_mel_channels, T)
     """
-    assert(torch.min(y.data) >= -1)
-    assert(torch.max(y.data) <= 1)
+    assert(torch.min(y.data) >= FLOAT32_64_MIN_WAV)
+    assert(torch.max(y.data) <= FLOAT32_64_MAX_WAV)
 
     magnitudes, phases = self.stft_fn.transform(y)
     magnitudes = magnitudes.data
