@@ -13,9 +13,10 @@ setup(
         "matplotlib",
         "numpy",
         "resampy",
-        "scikit-learn",
         "scipy",
         "torch<=1.7.1",
         "tqdm",
+        "tqdm",
+        "fastdtw",
     ],
 )
