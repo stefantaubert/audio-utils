@@ -4,3 +4,4 @@ from audio_utils.mel.mel_plot import (concatenate_mels, plot_melspec,
                                       plot_melspec_np)
 from audio_utils.mel.stft import STFT
 from audio_utils.mel.taco_stft import STFTHParams, TacotronSTFT, TSTFTHParams
+from audio_utils.mel.msd import align_mels_with_dtw, get_msd
