@@ -19,7 +19,7 @@ tqdm = "*"
 torch = "==1.7.1"
 matplotlib = "*"
 librosa = "*"
-
+fastdtw = "*"
 
 [requires]
 python_version = "3.8"
