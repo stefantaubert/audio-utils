@@ -10,6 +10,10 @@ pycodestyle = "*"
 isort = "*"
 pipenv-setup = "*"
 rope = "*"
+pytest = "*"
+pytest-xdist = "*"
+audio-utils = {editable = true, path = "."}
+unittest2pytest = "*"
 
 [packages]
 scipy = "*"
