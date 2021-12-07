@@ -1,5 +1,5 @@
 import random
-from math import inf, log10
+from math import ceil, inf, log10
 from typing import List, Tuple
 
 import numpy as np
@@ -70,8 +70,23 @@ def remove_silence(
   return wav
 
 
-def ms_to_samples(ms, sampling_rate):
-  res = int(ms * sampling_rate / 1000)
+def s_to_samples(s: float, sampling_rate: int) -> int:
+  res = ceil(s * sampling_rate)
+  return res
+
+
+def ms_to_samples(ms, sampling_rate) -> int:
+  res = ceil(ms * sampling_rate / 1000)
+  return res
+
+
+def samples_to_ms(samples, sampling_rate) -> float:
+  res = samples / sampling_rate * 1000
+  return res
+
+
+def samples_to_s(samples: int, sampling_rate: int) -> float:
+  res = samples / sampling_rate
   return res
 
 
