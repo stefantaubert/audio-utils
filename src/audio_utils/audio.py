@@ -70,19 +70,22 @@ def remove_silence(
   return wav
 
 
-def s_to_samples(s: float, sampling_rate: int) -> int:
-  res = ceil(s * sampling_rate)
+def get_closest_sample_rate_s(seconds: float, sample_rate: int, precision: int = 4) -> float:
+  samples = s_to_samples(seconds, sample_rate, precision)
+  result = samples_to_s(samples, sample_rate)
+  return result
+
+def s_to_samples(s: float, sampling_rate: int, precision: int = 4) -> int:
+  res = ceil(round(s * sampling_rate, precision))
   return res
 
 
-def ms_to_samples(ms, sampling_rate) -> int:
-  res = ceil(ms * sampling_rate / 1000)
-  return res
+def ms_to_samples(ms, sampling_rate, precision: int = 4) -> int:
+  return s_to_samples(ms / 1000, sampling_rate, precision)
 
 
 def samples_to_ms(samples, sampling_rate) -> float:
-  res = samples / sampling_rate * 1000
-  return res
+  return samples_to_s(samples, sampling_rate) * 1000
 
 
 def samples_to_s(samples: int, sampling_rate: int) -> float:
