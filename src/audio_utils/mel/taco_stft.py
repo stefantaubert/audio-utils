@@ -36,6 +36,7 @@ def dynamic_range_decompression(x, C=1):
 
 @dataclass
 class STFTHParams():
+  #n-fft
   filter_length: int = 1024
   hop_length: int = 256  # int(filter_length / n_overlap), n_overlap=4
   win_length: int = 1024
